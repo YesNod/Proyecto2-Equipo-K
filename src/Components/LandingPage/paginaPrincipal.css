@@ -1,0 +1,93 @@
+.landing-page {
+    background-image: linear-gradient(to bottom, #FBF4F9, #fcc2eb, #fcace4, #fcc2eb, #FBF4F9);
+}
+.section-1 {
+    text-align: center;
+}
+.section-1 h3{
+    text-align: center;
+    font-size: 60px;
+    font-family: serif;
+    padding-top: 200px;
+}
+.section-1 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.section-2{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+.contenedor-izquierdo{
+    display: flex;
+    align-items: center;
+}
+.contenedor-derecho h4{
+    font-size: 50px;
+}
+.section-2 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.section-3{
+    display: flex;
+    /* text-align: center; */
+    padding-top: 90px;
+    /* align-items: center; */
+}
+.contenedor-iz h5{
+    font-size: 80px;
+    color: #F73BBF;
+}
+.contenedor-iz h6{
+    font-size: 40px;
+}
+.section-3 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.contenedor-dr h7{
+    font-size: 80px;
+    color: #F73BBF;
+    display: flex;
+    margin-left: 80px;
+}
+.contenedor-dr h8{
+    font-size: 40px;
+}
+.contenedor-iz{
+    margin-left: 350px;
+    text-align: center;
+}
+.contenedor-dr{
+    margin-left: 80px;
+    text-align: center;
+}
+.section-4{
+    text-align: center;
+}
+.section-4 h9{
+    text-align: center;
+    font-size: 80px;
+    color: #F73BBF;
+    display: flex;
+    margin-left: 600px;
+}
+.section-4 h10{
+    font-size: 40px;
+}
+.section-4 p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.section-5{
+    text-align: center;
+    padding-top: 200px;
+}
+.section-5 h11{
+    font-size: 30px;
+}

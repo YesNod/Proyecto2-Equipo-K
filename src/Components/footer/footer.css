@@ -1,0 +1,11 @@
+.contenidoFo{
+    display: flex;
+    align-items: center;
+    margin-left: 350px;
+    padding-top: 200px;
+}
+.correo{
+    text-align: center;
+    font-size: 30px;
+    
+}

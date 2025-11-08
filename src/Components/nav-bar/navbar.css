@@ -1,0 +1,25 @@
+
+.nav-bar nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-container {
+    display: flex;
+    align-items: center; 
+}
+
+.right-container {
+    display: flex;
+    font-size: 30px;
+}
+
+.right-container ul {
+    display: flex;
+    list-style-type: none; 
+    padding: 60px; 
+}
+
+.right-container li {
+    margin-left: 10px; 
+}
