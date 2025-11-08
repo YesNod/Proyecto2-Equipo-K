@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { obtenerTodosLosCursos, eliminarCurso } from '../../utils/cursosService';
+import { convertirUrlAEmbed } from '../../utils/youtubeHelper';
 import './CursosList.css';
 
 const CursosList = () => {
@@ -49,6 +50,18 @@ const CursosList = () => {
         <div className="cursos-grid">
           {cursos.map((curso) => (
             <div key={curso.id} className="curso-card">
+              {curso.videoUrl && convertirUrlAEmbed(curso.videoUrl) && (
+                <div className="curso-video-preview">
+                  <iframe
+                    src={convertirUrlAEmbed(curso.videoUrl)}
+                    title={`Video de ${curso.nombre}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="curso-video-iframe"
+                  ></iframe>
+                </div>
+              )}
               <div className="curso-header">
                 <h2>{curso.nombre}</h2>
                 <span className="categoria-badge">{curso.categoria}</span>

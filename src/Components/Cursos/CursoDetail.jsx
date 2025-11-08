@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { obtenerCursoPorId, eliminarCurso } from '../../utils/cursosService';
+import { convertirUrlAEmbed } from '../../utils/youtubeHelper';
 import './CursoDetail.css';
 
 const CursoDetail = () => {
@@ -9,18 +10,18 @@ const CursoDetail = () => {
   const [curso, setCurso] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    cargarCurso();
-  }, [id]);
-
-  const cargarCurso = () => {
+  const cargarCurso = useCallback(() => {
     setLoading(true);
     const cursoData = obtenerCursoPorId(id);
     if (cursoData) {
       setCurso(cursoData);
     }
     setLoading(false);
-  };
+  }, [id]);
+
+  useEffect(() => {
+    cargarCurso();
+  }, [cargarCurso]);
 
   const handleEliminar = () => {
     if (window.confirm('¿Estás seguro de que quieres eliminar este curso?')) {
@@ -71,6 +72,22 @@ const CursoDetail = () => {
             <h3>Descripción</h3>
             <p>{curso.descripcion}</p>
           </div>
+
+          {curso.videoUrl && convertirUrlAEmbed(curso.videoUrl) && (
+            <div className="curso-detail-section">
+              <h3>Video del Curso</h3>
+              <div className="video-container">
+                <iframe
+                  src={convertirUrlAEmbed(curso.videoUrl)}
+                  title="Video del curso"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="video-iframe"
+                ></iframe>
+              </div>
+            </div>
+          )}
 
           <div className="curso-detail-info-grid">
             <div className="info-item">

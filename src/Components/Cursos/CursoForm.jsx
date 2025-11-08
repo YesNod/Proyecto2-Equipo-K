@@ -18,7 +18,8 @@ const CursoForm = () => {
     instructor: '',
     duracion: '',
     precio: '',
-    categoria: ''
+    categoria: '',
+    videoUrl: ''
   });
 
   const [loading, setLoading] = useState(false);
@@ -33,7 +34,8 @@ const CursoForm = () => {
         instructor: curso.instructor || '',
         duracion: curso.duracion || '',
         precio: curso.precio ? String(curso.precio) : '',
-        categoria: curso.categoria || ''
+        categoria: curso.categoria || '',
+        videoUrl: curso.videoUrl || ''
       });
     }
   }, [id]);
@@ -108,7 +110,8 @@ const CursoForm = () => {
       instructor: formData.instructor.trim(),
       duracion: formData.duracion.trim(),
       precio: parseFloat(formData.precio),
-      categoria: formData.categoria.trim()
+      categoria: formData.categoria.trim(),
+      videoUrl: formData.videoUrl.trim() || undefined
     };
 
     if (esEdicion) {
@@ -242,6 +245,27 @@ const CursoForm = () => {
                 <span className="error-message">{errors.categoria}</span>
               )}
             </div>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="videoUrl">
+              URL del Video de YouTube (Opcional)
+            </label>
+            <input
+              type="url"
+              id="videoUrl"
+              name="videoUrl"
+              value={formData.videoUrl}
+              onChange={handleChange}
+              className={errors.videoUrl ? 'error' : ''}
+              placeholder="Ej: https://www.youtube.com/watch?v=..."
+            />
+            {errors.videoUrl && (
+              <span className="error-message">{errors.videoUrl}</span>
+            )}
+            <small className="form-hint">
+              Puedes agregar una URL de YouTube para mostrar un video en la página del curso
+            </small>
           </div>
 
           <div className="form-actions">

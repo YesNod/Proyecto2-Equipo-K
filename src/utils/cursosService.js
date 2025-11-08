@@ -18,7 +18,8 @@ const cursosIniciales = [
     instructor: 'Ing. María González',
     duracion: '60 horas',
     precio: 399.99,
-    categoria: 'Desarrollo Web'
+    categoria: 'Desarrollo Web',
+    videoUrl: 'https://www.youtube.com/watch?v=rLoWMU4L_qE'
   },
   {
     id: 3,
@@ -49,11 +50,25 @@ const cursosIniciales = [
   }
 ];
 
+// Migrar datos existentes para agregar videoUrl al curso de React si no existe
+const migrarDatos = () => {
+  const cursos = JSON.parse(localStorage.getItem('cursos') || '[]');
+  const cursoReact = cursos.find(curso => curso.id === 2 && curso.nombre === 'Desarrollo Web con React');
+  
+  if (cursoReact && !cursoReact.videoUrl) {
+    cursoReact.videoUrl = 'https://www.youtube.com/watch?v=rLoWMU4L_qE';
+    localStorage.setItem('cursos', JSON.stringify(cursos));
+  }
+};
+
 // Inicializar datos si no existen
 const inicializarDatos = () => {
   if (!localStorage.getItem('cursos')) {
     localStorage.setItem('cursos', JSON.stringify(cursosIniciales));
     localStorage.setItem('nextId', '6');
+  } else {
+    // Migrar datos existentes
+    migrarDatos();
   }
 };
 
