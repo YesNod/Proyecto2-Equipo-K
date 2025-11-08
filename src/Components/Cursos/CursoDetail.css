@@ -1,0 +1,195 @@
+.curso-detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.curso-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn-volver {
+  background-color: #666;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+
+.btn-volver:hover {
+  background-color: #555;
+}
+
+.curso-detail-acciones {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.curso-detail-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.curso-detail-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.curso-detail-title h1 {
+  color: #333;
+  font-size: 2.5rem;
+  margin: 0;
+  flex: 1;
+}
+
+.categoria-badge {
+  background-color: #2196F3;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.curso-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.curso-detail-section {
+  margin-bottom: 20px;
+}
+
+.curso-detail-section h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #2196F3;
+  padding-bottom: 10px;
+}
+
+.curso-detail-section p {
+  color: #666;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.curso-detail-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.info-item {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.info-item h4 {
+  color: #555;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  letter-spacing: 1px;
+}
+
+.info-item p {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.info-item .precio {
+  color: #4CAF50;
+  font-size: 1.5rem;
+}
+
+.btn-editar,
+.btn-eliminar {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+
+.btn-editar {
+  background-color: #FF9800;
+  color: white;
+}
+
+.btn-editar:hover {
+  background-color: #e68900;
+}
+
+.btn-eliminar {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background-color: #da190b;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.curso-no-encontrado {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.curso-no-encontrado h2 {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .curso-detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .curso-detail-title h1 {
+    font-size: 2rem;
+  }
+
+  .curso-detail-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .curso-detail-acciones {
+    width: 100%;
+  }
+
+  .btn-editar,
+  .btn-eliminar {
+    flex: 1;
+    text-align: center;
+  }
+}
+
