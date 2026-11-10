@@ -18,6 +18,7 @@ const Home = () => {
       level: "Intermedio",
       students: 1500,
     },
+
     {
       id: 2,
       title: "Marketing Digital Avanzado",
@@ -30,6 +31,7 @@ const Home = () => {
       level: "Avanzado",
       students: 1200,
     },
+    
     {
       id: 3,
       title: "Diseño UX/UI Profesional",
